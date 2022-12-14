@@ -2,6 +2,7 @@ const Controller = require("../controller/user");
 
 const userRouter = require("express").Router();
 
+userRouter.get("/", Controller.getUSer);
 userRouter.post("/register", Controller.register);
 userRouter.post("/login", Controller.login);
 

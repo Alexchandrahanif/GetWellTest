@@ -2,6 +2,7 @@ const { User } = require("../models/index");
 const { createAccessToken, comparePassword } = require("../helper/helper");
 
 class Controller {
+  // Register
   static async register(req, res, next) {
     try {
       let { email, password } = req.body;
@@ -16,6 +17,7 @@ class Controller {
     }
   }
 
+  // Login
   static async login(req, res, next) {
     try {
       const { email, password } = req.body;
@@ -49,6 +51,18 @@ class Controller {
 
       res.status(200).json({
         access_token: access_token,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  // GET User
+  static async getUSer(req, res, next) {
+    try {
+      const dataUser = await User.findAll();
+      res.status(200).json({
+        data: dataUser,
       });
     } catch (error) {
       next(error);

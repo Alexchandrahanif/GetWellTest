@@ -7,13 +7,14 @@ class Controller {
         input,
       });
 
-      function sandBox(sentence) {
+      function jumlah(input) {
+        // input = input.toLoweCase();
         let result = {};
         let temp = 0;
-        for (let i = 0; i < sentence.length; i++) {
-          if (!result[sentence[i]]) {
-            result[sentence[i]] = 1;
-          } else result[sentence[i]]++;
+        for (let i = 0; i < input.length; i++) {
+          if (!result[input[i]]) {
+            result[input[i]] = 1;
+          } else result[input[i]]++;
         }
 
         for (const key in result) {
@@ -24,6 +25,7 @@ class Controller {
 
       res.status(200).json({
         message: `berhasil menambahkan ${input} ke tabel Logic`,
+        jumlahHuruf: jumlah(input),
       });
     } catch (error) {
       next(error);
