@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         element: <LogicPage />,
       },
       {
-        path: "/fabunaci",
+        path: "/fibonaci",
         element: <FabunaciPage />,
       },
     ],

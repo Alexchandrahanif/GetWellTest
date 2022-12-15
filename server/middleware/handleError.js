@@ -2,6 +2,7 @@ const handeError = (err, req, res, next) => {
   let code = 500;
   let message = "Internal Server Error";
 
+  console.log(err);
   if (
     err.name === "SequelizeValidationError" ||
     err.name == "SequelizeUniqueConstraintError"
@@ -12,7 +13,7 @@ const handeError = (err, req, res, next) => {
       message.push(el.message);
     });
   } else if (err.name === "Invalid email/password") {
-    code = 401;
+    code = 400;
     message = "Invalid email/password";
   } else if (err.name === "Invalid access_token") {
     code = 401;

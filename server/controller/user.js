@@ -5,8 +5,9 @@ class Controller {
   // Register
   static async register(req, res, next) {
     try {
-      let { email, password } = req.body;
-      const dataUser = await User.create({ email, password });
+      console.log("okey");
+      let { name, email, password, address } = req.body;
+      const dataUser = await User.create({ name, email, password, address });
 
       res.status(201).json({
         id: dataUser.id,

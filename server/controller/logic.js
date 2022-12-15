@@ -9,6 +9,7 @@ class Controller {
 
       function jumlah(input) {
         // input = input.toLoweCase();
+        input = input.split("").join("");
         let result = {};
         let temp = 0;
         for (let i = 0; i < input.length; i++) {
@@ -24,7 +25,7 @@ class Controller {
       }
 
       res.status(200).json({
-        message: `berhasil menambahkan ${input} ke tabel Logic`,
+        message: input,
         jumlahHuruf: jumlah(input),
       });
     } catch (error) {
