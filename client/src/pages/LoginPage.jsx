@@ -53,7 +53,7 @@ function LoginPage() {
                 <input
                   // onChange={handleChange}
                   name="email"
-                  type="email"
+                  type="text"
                   placeholder="email"
                   className="input input-bordered"
                   onChange={formik.handleChange}

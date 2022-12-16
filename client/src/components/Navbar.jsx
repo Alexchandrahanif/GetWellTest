@@ -19,7 +19,7 @@ function NavbarPage() {
         Swal.fire({
           position: "center",
           icon: "success",
-          title: "Sampai jumoa",
+          title: "Sampai jumpa",
           showConfirmButton: false,
           timer: 1500,
         });
